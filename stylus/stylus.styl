@@ -1,5 +1,10 @@
 @import 'normalize.styl'
-@import 'font.styl'
+// @import 'font.styl'
+.slides
+	img
+		height 100%
+		width 30%
+
 
 gris_claro = #676767
 gris_oscuro =#676767
@@ -45,16 +50,6 @@ img
 	width 80%
 	margin 1em auto
 	
-.desaparecer-registro
-	// display none
-	max-height 0px
-	overflow hidden
-	transition: 0.4s
-.desaparecer-logueo
-	// display none
-	max-height 0px
-	overflow hidden
-	transition: 0.4s
 .space-redes
 	padding 1em
 	text-align center
@@ -68,20 +63,6 @@ img
 	// .fb-follow	
 	// 	text-align center
 		
-.disable
-	max-height 0px !important
-	overflow hidden !important
- 
-	// display none
-	-webkit-transition  3s
-		transition 3s
-.enable
-	max-height 100%
-	display block	 
-	transition 3s
-	
-.habilitar
-	max-height 100%
 
 .container-uno
 	-webkit-transition 3s
@@ -94,10 +75,7 @@ img
 
 body
 	font-size 16px
-	// background rgb(231, 231, 231)
-		// background-image url("http://lorempixel.com/1850/1300/city/2/")
-		// background-repeat no-repeat
-		//  background-attachment:fixed
+	font-family 'Lucida Bright'
 	  
 a
 	text-decoration none
@@ -166,53 +144,54 @@ section
 	cursor pointer 
 	margin-top: 2em	 
 	.item-one
-		background #EF2673
+		border 1px solid #808080
+		box-shadow 3px 4px 9px 0px rgba(51, 50, 50, 0.87)
 		margin 0.2em		 
 		transition all 1s
 		span
 			border-right 1px solid transparent
 			margin-left .3em
 			margin-top 0.4em
-			overflow hidden
-		
+			overflow hidden		
 	.item-two
-		background #605D75
-		margin 0.2em
+		border 1px solid #808080
+		box-shadow 3px 4px 9px 0px rgba(51, 50, 50, 0.87)
+		margin 0.2em		 
 		transition all 1s
 		span
-			border-right 1px solid transparent
+			// border-bottom 1px solid red
 			margin-top 0.4em
 //animacion
 .item-one:hover
-	-webkit-transform scale(1.2)
-	transform scale(1.2)
-	transition all .4s
-.item-two:hover
-	-webkit-transform scale(1.2)
-	transform scale(1.2)
-	transition all .4s
-.Entrar
-	margin-top 1em
-	background #676767
-	padding: .2em 
+	background #708DBF
+	-webkit-transform scale(1.1)
+	transform scale(1.1)
+	transition all .3s	
 	.desc
 		color white
-		margin 1em
-		font-size 2em
-		font-family 'Lucida Bright'
+		background-color rgba(66, 139, 202, 0.83)
 		
-.message	
-	margin 0 auto
-	width 90%
-	p
-		overflow hidden 
-		max-height: 0em
-		transition: max-height .6s
-		color red
-.desc
+		
+		
+.item-two:hover
+	background #708DBF
+	-webkit-transform scale(1.1)
+	transform scale(1.1)
+	transition all .3s
 	color white
-	margin-left: 1em
+	.desc
+		color white
+		background-color rgba(66, 139, 202, 0.83)
 	
+.desc
+	color black
+	background-color rgba(66, 139, 202, 0.83)
+	font-family cursive
+	width 80%
+	margin-left: 1em
+	padding .2em
+	border-radius .2em
+
 .Section 
 	display none
 	.Article
@@ -222,108 +201,19 @@ section
 	font-size: 2em
 	color: #676767
 	font-family: 'Lucida Bright'
-.login-form 	
-	text-align center
-	margin-bottom: 1em
-.register 
-	transition 1s
-	margin: 0 auto
-	width: 180px
-	padding: 20px
-	background: #FFFFFF
-	border-radius: 3px
-	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3)
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3)
-input 
-	font-family: inherit
-	font-size: inherit
-	color: inherit
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-.register-input 
-	display: block
-	width: 100%
-	height: 38px
-	margin-top: 2px
-	font-weight: 500
-	background: none
-	border: 0
-	border-bottom: 1px solid #d8d8d8
-.register-input:focus 
-	border-color: #1e9ce6
-	outline: 0
-.register-button 
-	display: block
-	width: 100%
-	height: 42px
-	margin-top: 25px
-	font-size: 16px
-	font-weight: bold
-	color: #494d59
-	text-align: center
-	text-shadow: 0 1px rgba(255, 255, 255, 0.5)
-	background: #fcfcfc
-	border: 1px solid
-	border-color: #d8d8d8 #d1d1d1 #c3c3c3
-	border-radius: 2px
-	cursor: pointer
-	background-image: -webkit-linear-gradient(top, #fefefe, #eeeeee)
-	background-image: -moz-linear-gradient(top, #fefefe, #eeeeee)
-	background-image: -o-linear-gradient(top, #fefefe, #eeeeee)
-	background-image: linear-gradient(to bottom, #fefefe, #eeeeee)
-	-webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04)
-	box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04)
-.register-button:active 
-	background: #eee
-	border-color: #c3c3c3 #d1d1d1 #d8d8d8
-	background-image: -webkit-linear-gradient(top, #eeeeee, #fcfcfc)
-	background-image: -moz-linear-gradient(top, #eeeeee, #fcfcfc)
-	background-image: -o-linear-gradient(top, #eeeeee, #fcfcfc)
-	background-image: linear-gradient(to bottom, #eeeeee, #fcfcfc)
-	-webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.03)
-	box-shadow: inset 0 1px rgba(0, 0, 0, 0.03)
-.register-button:focus 
-	outline: 0
-	
-.register-switch 
-	height: 32px
-	margin-bottom: 15px
-	padding: 4px
-	background: black
-	border-radius: 2px
-	-webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 1px 0 rgba(0, 0, 0, 0.02), inset -1px 0 rgba(0, 0, 0, 0.02)
-	box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 1px 0 rgba(0, 0, 0, 0.02), inset -1px 0 rgba(0, 0, 0, 0.02)
-.register-switch-input 
-	display: none
-.register-switch-label 
-	float: left
-	width: 50%
-	line-height: 32px
-	color: white
-	text-align: center
-	text-shadow: 0 -1px rgba(0, 0, 0, 0.2)
-	cursor: pointer
-.register-switch-input:checked + .register-switch-label 
-	font-weight: 500
-	color: white
-	text-shadow: 0 1px rgba(255, 255, 255, 0.5)
-	background: #6C6C6C
-	border-radius: 2px
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1)
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1)
 
-	
-.Footer 
+footer.Footer
 	text-align center
-	span
-		display inline-block
-		padding .5em
-		margin 0 1em
-		cursor pointer
-
+	display block
+	text-align center
+	background #353249
+	h2.tittle-4
+	color white
+	p.article-parrafo
+		color white
 	
-@media screen and (min-width: 400px)	
+
+@media (min-width: 400px) and (max-width: 401px)
 	.register 
 		transition 1s
 		width: 250px !important
@@ -333,28 +223,44 @@ input
 	.titulo
 		font-size 4.2em
 	.description
-		font-size 1.6em
-	.facebook
-		// margin-bottom 1em
-	.Footer
-		p
-			color gris_claro			
-			font-size 1.4em	
- 	.login
-		p
-			border-bottom 3px solid #A4A4A5
-	
-	.login:hover
-		p
-			border-bottom 3px solid white
+		font-size 1.6em		
+	.article
+		img
+			width 33%
+			transition all .2s
+			margin-top .6em
+		img:hover
+			transform scale(1.2)
+			transition all 1s
+	.redes-sociales
+		padding 1em 1em 
+		.item-one
+			background #EF2673
+			margin 0.2em		 
+			transition all 1s
+			span
+				border-right 1px solid transparent
+				margin-left .3em
+				margin-top 0.4em
+				overflow hidden			
+		.item-two
+			background #605D75
+			margin 0.2em
+			transition all 1s
+			span
+				border-right 1px solid transparent
+				margin-top 0.4em
+	//animacion
+	.item-one:hover
+		-webkit-transform scale(1.1)
+		transform scale(1.1)
+		transition all .3s
+	.item-two:hover
+		-webkit-transform scale(1.1)
+		transform scale(1.1)
+		transition all .3s
 			
-	.create-account
-		p
-			border-bottom 3px solid #A4A4A5
-		
-	.create-account:hover
-		p
-			border-bottom 3px solid white
+			
 
 @media screen and (max-width: 580px)
 	nav ul
@@ -372,94 +278,31 @@ input
 		display: block	
 	.m
 		p
-			max-height: 2em
-@media screen and (min-width: 640px)
+			max-height: 2em	
+
+@media (min-width: 640px) 
+	.titulo
+		font-size 4em
+	hr
+		width 40%
 	.register 
 		width: 40%	
 	.m
 		p
 			max-height: 2em
 	.redes-sociales 
-		width: 100%
+		margin 0 1em
+		width  98%
 		.item-one
-			width: 50%
-			float: left
-			margin 0
-		.item-one
-			width: 50%
-			float: left
-			margin 0
-					
- 
-		
-@media screen and (min-width: 768px)		
-	.centrado	
-		margin 1em 3em 	
-	.register 
-		width: 40%	
-	.hr
-		display none
-	.redes-sociales 
-		width: 100% 
-		
-		.item-one
-			width: 33%
-			float: left
-			margin 0
+			width 46%
+			display inline-block
+			
 		.item-two
-			width: 33%
-			float: left
-			margin 0
-					
-	.Section
-		display: block
-		margin-top: 2em
-		width 73%
-		text-align: center
-		.Article
-			padding: 1em
-			margin 2em
-			width: 10em	
-			h1
-				 font-size 2.4em	
-				  font-family cursive		 	
-			p
-				text-align: initial	 
-				 font-family cursive
-			
-		
-	.create-account:hover
-		p
-			border-bottom 3px solid white
-	.Footer
-		background: #605d75
-		p
-			color white
-			font-size 1.25em
-	.login
-		p
-			border-bottom 3px solid #A4A4A5
-	
-	.login:hover
-		p
-			border-bottom 3px solid white
-			
-	.create-account
-		p
-			border-bottom 3px solid #A4A4A5
-		
-	.create-account:hover
-		p
-			border-bottom 3px solid white
- 
-@media screen and (min-width: 871px)
-	.titulo
-		.center
-			font-size 5em
-	.centrado
-		margin 2em 6em
+			width 46%
+			display inline-block			
 	.Section
 		display: block	
+		text-align center
 		.Article
 			padding: 1em
 			margin 4em
@@ -491,4 +334,31 @@ input
 		 color gray
 		 line-height 1em
 		 text-align center
- 		
+ 	footer.Footer
+		text-align center
+		display block
+		text-align center
+		background #353249
+		h2.tittle-4
+			color white
+			p.article-parrafo
+				color #E2E2E2	
+
+ 	footer.Footer
+		text-align center
+		display block
+		text-align center
+		background #353249
+		h2.tittle-4
+			color white
+			font-size 2em
+			p.article-parrafo
+							
+				color #E2E2E2
+		img:hover
+			-webkit-transform scale(1.1)
+			transform scale(1.1)
+			transition all .3s
+
+		
+			
